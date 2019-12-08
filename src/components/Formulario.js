@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-import { CategoriasConsumer } from '../context/CategoriasContex'
+import { CategoriasConsumer } from '../context/CategoriasContext';
+
+import { EventosConsumer } from '../context/EventosContext';
+
 
 class Formulario extends Component {
     state = {
@@ -16,7 +19,16 @@ obtenerDatosEvento = e => {
 
     render(){
         return(
-            <form>
+            <EventosConsumer>
+                {(value) =>{
+                    return(
+
+            <form
+            onSubmit={e=>{
+                    e.preventDefault();
+                    value.obtenerEventos(this.state)
+            }}
+            >
                 <fieldset className="uk-fieldset uk-margin">
                     <legend className="uk-legend uk-text-center">
                         Busca Tu evento por Nombre o Categoria
@@ -58,6 +70,9 @@ obtenerDatosEvento = e => {
                         </div>
                     </div>
             </form>
+                    )
+                }}
+            </EventosConsumer>
         );
     }
 }
