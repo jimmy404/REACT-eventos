@@ -35,7 +35,7 @@ obtenerDatosEvento = e => {
                     </legend>
                 </fieldset>
                     <div className="uk-colum-1-3@m uk-margin">
-                        <div className="uk-margin uk-margin="true>
+                        <div className="uk-margin" uk-margin="true">
                             <input
                                 name="nombre"
                                 className="uk-input"
@@ -44,7 +44,7 @@ obtenerDatosEvento = e => {
                                 onChange={this.obtenerDatosEvento}
                             />
                         </div>
-                        <div className="uk-margin uk-margin="true>
+                        <div className="uk-margin" uk-margin="true">
                             <select className="uk-select"
                             name="categoria"
                             onChange={this.obtenerDatosEvento}

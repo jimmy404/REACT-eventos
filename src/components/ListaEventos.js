@@ -10,7 +10,10 @@ const ListaEventos = () => {
             <EventosConsumer>
                 {(value) => {
                     return value.eventos.map(evento =>(
-                        <Evento />
+                        <Evento
+                        key={evento.id}
+                        evento={evento}
+                        />
                     ))
                 }}
             </EventosConsumer>
